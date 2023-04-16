@@ -81,12 +81,13 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
 		addCheckoutListener(btnCheckout);
 
         JButton btnBackToMain = new JButton("HOME");
+		btnBackToMain.setBounds(20, 150, 100, 20);
         addBackButtonListener(btnBackToMain);
 
-        JPanel pnlButtonSave = new JPanel();
-        pnlButtonSave.add(btnBackToMain);
-        pnlButtonSave.setBounds(20, 150, 800, 35);
-        pnlButtonSave.setBackground(new Color(244, 244, 244,0));
+//        JPanel pnlButtonSave = new JPanel();
+//        pnlButtonSave.add(btnBackToMain);
+//        pnlButtonSave.setBounds(20, 150, 800, 35);
+//        pnlButtonSave.setBackground(new Color(244, 244, 244,0));
 
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Member Id");
@@ -109,7 +110,7 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
 		panelCheckoutFields.add(txtMemberID);
 
 		panelCheckoutFields.add(btnCheckout);
-		panelCheckoutFields.add(pnlButtonSave, BorderLayout.CENTER);
+		panelCheckoutFields.add(btnBackToMain);
 
         
         panelCheckoutFields.setBackground(new Color(244, 244, 244,180));

@@ -1,13 +1,11 @@
 package dataaccess;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import business.models.Address;
-import business.models.Author;
-import business.models.Book;
-import business.models.LibraryMember;
+import business.models.*;
 
 /**
  * This class loads data into the data repository and also sets up the storage
@@ -55,21 +53,21 @@ public class TestData {
 	}
 
 	public void checkOutRecordData() {
-//		@SuppressWarnings("serial")
-//		LibraryMember libraryMember = new LibraryMember("1001", "Andrew", "Smiths", "444-333-2211", addresses.get(4));
-//
-//		CheckOutRecordEntry entry = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now(),
-//				allBooks.get(0).getCopy(0));
-//		CheckOutRecordEntry entry1 = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now(),
-//				allBooks.get(0).getCopy(0));
-//
-//		List<CheckOutRecordEntry> list = new ArrayList<CheckOutRecordEntry>();
-//		list.add(entry);
-//		list.add(entry1);
-//		@SuppressWarnings("serial")
-//		CheckOutRecord checkOutRecord = new CheckOutRecord(libraryMember, list);
-//
-//		DataAccessFacade.loadCheckOutRecordMap(checkOutRecord);
+		@SuppressWarnings("serial")
+		LibraryMember libraryMember = new LibraryMember("1001", "Andrew", "Smiths", "444-333-2211", addresses.get(4));
+
+		CheckOutRecordEntry entry = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now(),
+				allBooks.get(0).getCopy(0));
+		CheckOutRecordEntry entry1 = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now(),
+				allBooks.get(0).getCopy(0));
+
+		List<CheckOutRecordEntry> list = new ArrayList<CheckOutRecordEntry>();
+		list.add(entry);
+		list.add(entry1);
+		@SuppressWarnings("serial")
+		CheckOutRecord checkOutRecord = new CheckOutRecord(libraryMember, list);
+
+		DataAccessFacade.loadCheckOutRecordMap(checkOutRecord);
 	}
 
 	public void libraryMemberData() {

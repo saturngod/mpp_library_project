@@ -36,7 +36,15 @@ public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 	JTable jt;
 
 	public void checkOutBook() {
-		
+		if(txtMemberID != null) {
+
+			if(jt != null) {
+				DefaultTableModel model2 = (DefaultTableModel) jt.getModel();
+				model2.setRowCount(0);
+			}
+			return;
+		}
+
 		setResizable(false);
 		setTitle("Library System");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,13 +72,14 @@ public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 		addCheckIDListener(btnSearch);
 
 		JButton btnBackToMain = new JButton("HOME");
+
 		addBackButtonListener(btnBackToMain);
 
 		JPanel pnlButtons = new JPanel();
 		pnlButtons.add(btnBackToMain);
 		pnlButtons.add(btnSearch);
 		pnlButtons.setBounds(20, 40, 800, 35);
-		pnlButtons.setBackground(new Color(244, 244, 244,0));
+
 
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Member Id");
