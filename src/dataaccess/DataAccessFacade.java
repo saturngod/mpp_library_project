@@ -22,7 +22,7 @@ public class DataAccessFacade implements DataAccess {
 		BOOKS, MEMBERS, USERS, AUTHORS, CHECKOUTRECORD;
 	}
 
-	public static final String OUTPUT_DIR = System.getProperty("user.dir") + "/src/Project/storage";
+	public static final String OUTPUT_DIR = System.getProperty("user.dir") + "/src/storage";
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 
 	@SuppressWarnings("unchecked")
@@ -112,7 +112,9 @@ public class DataAccessFacade implements DataAccess {
 	static void saveToStorage(StorageType type, Object ob) {
 		ObjectOutputStream out = null;
 		try {
+
 			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, type.toString());
+
 			out = new ObjectOutputStream(Files.newOutputStream(path));
 			out.writeObject(ob);
 		} catch (IOException e) {
@@ -132,6 +134,7 @@ public class DataAccessFacade implements DataAccess {
 		Object retVal = null;
 		try {
 			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, type.toString());
+			System.out.println(path);
 			in = new ObjectInputStream(Files.newInputStream(path));
 			retVal = in.readObject();
 		} catch (Exception e) {

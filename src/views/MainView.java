@@ -1,5 +1,7 @@
 package views;
 
+import dataaccess.User;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -87,6 +89,7 @@ public class MainView extends JFrame  implements LibWindow{
 				MainLogin.INSTANCE.init();
 				Util.centerFrameOnDesktop(MainLogin.INSTANCE);
 				MainLogin.INSTANCE.setVisible(true);
+				User.updateCurrentUser(null);
 			}
 		});
 		mnNewMenu.add(logout_1);
